@@ -12,7 +12,9 @@ auto RunSuite (const char* SuiteName)
                                 UnitTest::True(),0);
 }
 SUITE(KeyTest){
-
+TEST(boost1_test){
+        const char* test_argv[] = {"name", "-k", "98"};
+    }
 }
 
 SUITE(client_base){
