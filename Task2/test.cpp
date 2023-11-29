@@ -11,9 +11,12 @@ auto RunSuite (const char* SuiteName)
                                 SuiteName,
                                 UnitTest::True(),0);
 }
+std::string t;
+int key;
+modAlphaCipher cipher(key,t);
 SUITE(KeyTest){
 TEST(boost1_test){
-        const char* test_argv[] = {"name", "-k", "98"};
+        CHECK_THROW(cipher.getValidKey(key=-3) , cipher_error);
     }
 }
 

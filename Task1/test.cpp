@@ -3,6 +3,7 @@
 #include <string>
 #include <UnitTest++/TestReporterStdout.h>
 #include "modAlphaCipher.h"
+
 auto RunSuite (const char* SuiteName)
 { 
     UnitTest::TestReporterStdout reporter;
@@ -11,13 +12,15 @@ auto RunSuite (const char* SuiteName)
                                 SuiteName,
                                 UnitTest::True(),0);
 }
+
 SUITE(KeyTest){
+    TEST(ValidKey) {
+        CHECK_THROW(modAlphaCipher(L"АБВГД").encrypt(L"АААА"), cipher_error);
+        
+    }
 
 }
 
-SUITE(client_base){
-
-}
 
 int main() {
     RunSuite("KeyTest");

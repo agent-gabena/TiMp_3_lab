@@ -7,7 +7,7 @@ TEST_OBJECTS = $(TEST_SOURCES:%.cpp=%.o)
 
 CC = g++
 CCFlags = -Wall
-LIBS = -lcrypto++ -l boost_program_options
+LIBS = -lcrypto++
 all:$(TARGET)
 $(TARGET):$(STD_OBJECTS)
 	$(CC) $^ $(LIBS) -o $@

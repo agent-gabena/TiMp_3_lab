@@ -34,11 +34,6 @@ void check(const std::wstring& Text, const std::wstring& key, const bool destruc
 int main(int argc, char **argv) {
     std::locale loc("ru_RU.UTF-8");
     std::locale::global(loc);
-    check(L"БОЛЬШАЯКОРИЧНЕВАЯЛИСАБЫСТРОПРЫГАЕТЧЕРЕЗСОБАКУ",L"ТОПСЕКРЕТ");
-    check(L"ТЕКСТДЛЯШИФРА",L"");
-    check(L"ТЕКСТДЛЯШИФРА",L"АБВГ123");
-    check(L"БОЛЬШАЯ КОРИЧНЕВАЯ ЛИСА БЫСТРО ПРЫГАЕТ ЧЕРЕЗ СОБАКУ ",L"СУПЕР");
-    check(L"123",L"АБВГ");
-    check(L"БОЛЬШАЯКОРИЧНЕВАЯЛИСАБЫСТРОПРЫГАЕТЧЕРЕЗСОБАКУ",L"ТОПСЕКРЕТ",true);
+    std::wcout << modAlphaCipher(L"АБВГД").decrypt(L"АААА") << std::endl;
     return 0;
 }
