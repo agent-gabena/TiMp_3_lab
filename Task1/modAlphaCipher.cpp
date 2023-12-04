@@ -7,8 +7,8 @@ inline std::wstring modAlphaCipher::getValidKey(const std::wstring & s){
         for (auto & c:tmp) {
             if (!iswalpha(c))
                 throw cipher_error(std::string("Invalid key"));
-            if (islower(c))
-                c = toupper(c);
+            if (iswlower(c))
+                c = towupper(c);
         }
 
     return tmp;
@@ -20,7 +20,7 @@ inline std::wstring modAlphaCipher::getValidOpenText(const std::wstring & s)
     for (auto c:s) {
         if (iswalpha(c)) {
             if (iswlower(c))
-                tmp.push_back(toupper(c));
+                tmp.push_back(towupper(c));
             else
                 tmp.push_back(c);
 }

@@ -18,8 +18,7 @@ void check(const std::wstring& Text, const std::wstring& key, const bool destruc
         std::wstring decryptedText;
         modAlphaCipher cipher(key);
         cipherText = cipher.encrypt(Text);
-            if (destructCipherText)
-            cipherText.front() = towlower(cipherText.front());
+            
         decryptedText = cipher.decrypt(cipherText);
         std::wcout<<"key="<<key<<std::endl;
         std::wcout<<Text<<std::endl;
@@ -34,6 +33,6 @@ void check(const std::wstring& Text, const std::wstring& key, const bool destruc
 int main(int argc, char **argv) {
     std::locale loc("ru_RU.UTF-8");
     std::locale::global(loc);
-    std::wcout << modAlphaCipher(L"АБВГД").decrypt(L"АААА") << std::endl;
+    std::wcout << modAlphaCipher(L"Я").encrypt(L"АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ") << std::endl;
     return 0;
 }
